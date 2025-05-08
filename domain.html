@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Sitebuilder - Select Option</title>
+  <link rel="stylesheet" href="domain.css">
+
+
+  <div class="login-container">
+    <div class="login-header">
+      <span class="logo">DS</span>
+      <h1>AI Sitebuilder</h1>
+      <p>Select how you want to start building your website</p>
+    </div>
+
+    <form id="domainForm">
+      <div class="domain-options">
+        <label class="domain-card">
+          <input type="radio" name="domain" value="templates" required />
+          <div class="card-content">
+            <div class="card-icon">📂</div>
+            <h3>Templates</h3>
+            <p>Pick from pre-made designs</p>
+          </div>
+        </label>
+
+        <label class="domain-card">
+          <input type="radio" name="domain" value="editor" required />
+          <div class="card-content">
+            <div class="card-icon">🛠️</div>
+            <h3>Drag & Drop Editor</h3>
+            <p>Build your site from scratch</p>
+          </div>
+        </label>
+      </div>
+
+      <button type="submit" class="login-btn">Continue</button>
+    </form>
+  </div>
+
+  <script src="domain.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Sitebuilder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            AI Sitebuilder
+        </div>
+
+        <div class="content">
+            <div class="welcome-message">
+                Hi, I'm <strong>AI Sitebuilder</strong>.<br>
+                How can I help you today?
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" class="message-input" id="messageInput" placeholder="Type your message...">
+            <button class="mic-button" id="mic-button">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/>
+                </svg>
+            </button>
+            <button class="send-button" id="sendButton">
+                <svg class="icon" viewBox="0 0 24 24" fill="white">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Code Preview Container (Hidden by default) -->
+    <div id="codePreviewContainer">
+        <div class="preview-header">
+            <span>Code Preview</span>
+            <button id="closePreview">✕</button>
+        </div>
+        <iframe id="codePreviewFrame" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+
+    <script src="domain.js"></script>
+</body>
+</html>

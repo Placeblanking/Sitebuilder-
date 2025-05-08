@@ -1,0 +1,348 @@
+/* ====================== */
+/* Original CSS - Fixed & Optimized with Full Screen Layout */
+/* ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #000000;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====================== */
+/* Chat Container Styles */
+/* ====================== */
+.chat-container {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.header {
+    padding: 16px;
+    background-color: #2a2a2a;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+}
+
+/* ====================== */
+/* Chat Content and Messages */
+/* ====================== */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: calc(100% - 120px); /* Account for header and input container */
+}
+
+.welcome-message {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #2a2a2a;
+    align-self: flex-end;
+    border: 1px solid #444;
+}
+
+.message.bot {
+    background-color: #10a37f;
+    align-self: flex-start;
+    color: #fff;
+}
+
+/* ====================== */
+/* Input and Button Styles */
+/* ====================== */
+.input-container {
+    padding: 12px;
+    background-color: #1a1a1a;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #333;
+}
+
+.message-input {
+    flex: 1;
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.send-button, .mic-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #10a37f;
+    color: #fff;
+}
+
+.send-button:hover {
+    background-color: #0d8a6d;
+}
+
+/* ====================== */
+/* Code Blocks */
+/* ====================== */
+.code-block {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    margin: 10px 0;
+    overflow: hidden;
+    border: 1px solid #444;
+    width: 100%;
+}
+
+.code-header {
+    background-color: #333;
+    padding: 8px 12px;
+    color: #aaa;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+.code-content {
+    padding: 12px;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0;
+    color: #e6e6e6;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    max-height: 300px;
+}
+
+.code-options {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+    background-color: #333;
+    gap: 8px;
+}
+
+.code-option-btn {
+    padding: 6px 12px;
+    background-color: #10a37f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.code-option-btn:hover {
+    background-color: #0d8a6d;
+    transform: translateY(-1px);
+}
+
+.code-option-btn:active {
+    transform: translateY(0);
+}
+
+/* ====================== */
+/* Inline Code Preview */
+/* ====================== */
+.code-preview {
+    border-top: 1px solid #444;
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+.code-preview .preview-header {
+    padding: 8px 12px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+}
+
+.close-preview-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.preview-frame {
+    width: 100%;
+    height: 250px;
+    border: none;
+    background-color: white;
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* ====================== */
+/* Code Preview Modal (Legacy) */
+/* ====================== */
+#codePreviewContainer {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 400px;
+    height: 300px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.preview-header {
+    padding: 10px;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    color: #fff;
+}
+
+#codePreviewFrame {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: white;
+}
+
+#closePreview {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ====================== */
+/* Loading Animation */
+/* ====================== */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+#loading-message {
+    animation: pulse 1.5s infinite;
+    background-color: #333;
+    color: #aaa;
+}
+
+/* ====================== */
+/* Media Queries for Mobile */
+/* ====================== */
+@media (max-width: 600px) {
+    #codePreviewContainer {
+        width: calc(100% - 40px);
+        height: 250px;
+        right: 20px;
+        left: 20px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+    
+    .code-block {
+        max-width: 100%;
+    }
+    
+    .preview-frame {
+        height: 200px;
+    }
+}
+/* Add these styles to your styles.css file */
+
+.mic-button {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.mic-button.recording {
+    background-color: #ff4b4b;
+    animation: pulse 1.5s infinite;
+}
+
+.mic-button .status-text {
+    position: absolute;
+    white-space: nowrap;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
